@@ -3,17 +3,18 @@
         "$uid (group)": { // allows for quick group-based read/edit permissions.
             "$uid (board)": {
                 "name": "Board Title",
-                "group": "$uid (group)",
                 "goal-time": 3600000,
                 "start-time": 1234567890123456,
                 "end-time": 1234567890123456,
                 "users": {
                     "$uid (user)": true
                 },
+                // Items are grouped by category
                 "categories": {
                     "$uid (category)": {
                         "title": "Category Title",
                         "color": "rgb(45, 160, 80)",
+                        "order": 0, // during presentation items are sorted by category order first
                         "items": {
                             "$uid (item)":  true
                         }
@@ -22,6 +23,7 @@
                 "items": {
                     "$uid (item)": {
                         "text": "Thing that is important to me",
+                        "owner": "uid (user)",
                         "deleted": true,
                         "total-time": 12300,
                         "agree": {
@@ -40,14 +42,6 @@
                         "item": "$uid (item)"
                     }
                 }
-            }
-        }
-    },
-    // once a user is part of a group, that user can be invited to boards in that group.
-    "board-invites": {
-        "uid (user)": {
-            "uid (group)": {
-                "board": true // false if rejected
             }
         }
     },
