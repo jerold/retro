@@ -2,7 +2,53 @@
     "users": {
         "$uid (user)": {
             "name": "Jerold A.",
-            "heartbeat-time": 1234567890123456
+            "heartbeat-time": 1234567890123456,
+            "last-board": "$uid (group)"
+        }
+    },
+    "boards": {
+        "$uid (board)": {
+            "name": "Board Title",
+            "owner": "$uid (user)",
+            "users": {
+                "$uid (user)": true
+            },
+            "categories": {
+                "$uid (category)": {
+                    "title": "Category Title",
+                    "color": "rgb(45, 160, 80)",
+                    "items": {
+                        "$uid (item)":  true
+                    }
+                }
+            },
+            "items": {
+                "$uid (item)": {
+                    "text": "Thing that is important to me",
+                    "deleted": true,
+                    "total-time": 12300,
+                    "agree": {
+                        "$uid (user)": true
+                    },
+                    "disagree": {
+                        "$uid (user)": true
+                    }
+                }
+            },
+            "followups": {
+                "$uid (followup)": {
+                    "owner": "$uid (user)",
+                    "text": "note about the given item",
+                    "category": "$uid (category)",
+                    "item": "$uid (item)"
+                }
+            }
+        }
+    },
+    "board-invites": {
+        "$uid (board-invite)": {
+            "board": "$uid (boart)",
+            "user": "$uid (user)"
         }
     }
 }
