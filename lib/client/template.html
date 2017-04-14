@@ -1,0 +1,9 @@
+<div roll="main">
+    <p *ngIf="client.theUser.isOpen()">The User: {{client.theUser.value()?.name}} (Last active {{client.fmtAgo(client.theUser.value()?.heartbeat)}}.)</p>
+
+    <button class="button is-primary" (click)="client.actions.signIn()">Sign in</button>
+    <button class="button is-danger" (click)="client.actions.signOut()">Sign out</button>
+    <br>
+
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,8 @@
+{
+    "users": {
+        "$uid (user)": {
+            "name": "Jerold A.",
+            "heartbeat-time": 1234567890123456
+        }
+    }
+}
